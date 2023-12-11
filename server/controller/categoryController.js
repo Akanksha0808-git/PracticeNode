@@ -1,6 +1,10 @@
 const { Bollywood, Hollywood, Fitness, Food, Techno } = require("../DataStore/DataStore")
 const BollywoodController = (req, res) => {
-    return res.send(Bollywood)
+    // return res.send(Bollywood)
+    const id=req.params.id
+    const data=Bollywood.find((item)=>item.id==id)
+    console.log(data)
+    return res.send(data)
 }
 const HollywoodController = (req, res) => {
     return res.send(Hollywood)
